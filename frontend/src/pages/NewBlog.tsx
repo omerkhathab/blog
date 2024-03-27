@@ -1,9 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 
 export const NewBlog = () => {
+    if(!localStorage.getItem("authorization")){
+        return <Navigate to={'/signin'} />
+    }
     const [content, setContent] = useState("");
     const [title, setTitle] = useState("");
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
