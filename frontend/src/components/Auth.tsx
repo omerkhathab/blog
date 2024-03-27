@@ -15,8 +15,10 @@ export const Auth = ({type}:{type: "signup"|"signin"}) => {
     const sendValue = async () => {
         const backendURL = `${BACKEND_URL}/api/v1/user/${type}`
         console.log(backendURL);
+        const email = inputs.email.trim();
+
         let payload : SignupInput | SigninInput = {
-            email: inputs.email.trim(),
+            email,
             password: inputs.password
         };
         if(type == 'signup') {
