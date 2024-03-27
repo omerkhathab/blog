@@ -16,7 +16,7 @@ export const Auth = ({type}:{type: "signup"|"signin"}) => {
         const backendURL = `${BACKEND_URL}/api/v1/user/${type}`
         console.log(backendURL);
         let payload : SignupInput | SigninInput = {
-            email: inputs.email,
+            email: inputs.email.trim(),
             password: inputs.password
         };
         if(type == 'signup') {
