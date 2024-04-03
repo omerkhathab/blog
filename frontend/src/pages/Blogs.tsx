@@ -27,7 +27,7 @@ export const Blogs = () => {
             <NavBar />
             <div className="flex justify-center">
                 <div className="flex flex-col justify-center w-full md:w-3/4 xl:w-2/3">
-                    {blogs.map((blog) =>{
+                    {blogs.reverse().map((blog) =>{
                         return <div>
                             <BlogCard id={blog.id} authorName={blog.author.name} published="01/02/24" blogTitle={blog.title} blogContent={blog.content}/>
                         </div>
